@@ -1,0 +1,85 @@
+show databases;
+########################################### 1 lesson#######################################################################
+use world;
+show tables;
+
+show columns from country;
+
+
+select * from country;
+select * from country order by Name; # orderby is use to view data by alphabatical order or numerical oder
+select Name, continent as CONTINENTS from country order by Name;
+select count(*) from country; #count fuction use the total number rows 
+select * from country order by name limit 5,5; #limit is use for some extende to see the data
+# '*' is use for selecting all data within the column
+
+
+
+
+######################################################## lesson 2##########################################################################
+
+ 
+show databases;
+create database company;
+use company;
+ 
+#CREATE TABLE CUSTOMER
+create table customer(
+ID int,
+name varchar(50),
+address varchar(50),
+city varchar(50),
+state char(50),
+zip varchar(50)
+
+);
+
+show tables;
+
+insert into customer (
+name,
+city,
+state
+) values("Jimi Hendrex ",'Renton','WA');
+
+select * from customer;
+
+
+#########################################update statement###############################
+select * from customer;
+
+select * from customer where name LIKE 'jim%%';
+
+UPDATE customer 
+SET 
+    ID = 7,
+    address = null,
+    zip = "98056"
+WHERE
+    name LIKE 'Jimi%';
+
+SET SQL_SAFE_UPDATES = 0;
+
+
+##################################Delete#############################################
+show databases;
+use company;
+create database scratch;
+use scratch;
+create table test (a int, b varchar(20), c varchar(20));
+insert into test values(1, 'this','right here');
+insert into test values(2, 'that','over there');
+insert into test values(3, 'these','nowhere');
+insert into test values(4, 'those','everywhere');
+insert into test values(1, 'this','right here');
+select * from test;
+select *  from test where a=2 ;
+delete from test where a=2; 
+delete from test where a=1;
+drop table test;
+use company;
+show tables;
+select * from customer;
+select * from customer where name like 'b%%' or name like 'ji%%' ;
+delete from customer where name= NULL;
+insert into customer values ( 3, 'Ram',' eltham hghstr','eltham','LO','27565');
